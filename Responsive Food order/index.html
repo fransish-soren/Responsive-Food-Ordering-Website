@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BiteDash | Order Food Online</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-burger"></i> Bite<span>Dash</span>
+      </a>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" placeholder="Search dishes...">
+      </div>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#menu" class="nav-link active">Menu</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Cart Toggle Button -->
+        <button class="cart-btn" id="cart-btn" aria-label="Open Cart">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Delicious Food Delivered To Your Doorstep</h1>
+      <p>Freshly cooked meals from artisan chefs made with organic, locally sourced ingredients.</p>
+      <a href="#menu" class="btn btn-primary">Order Now</a>
+    </div>
+  </section>
+
+  <!-- Menu & Ordering Section -->
+  <section class="menu-section section-padding" id="menu">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>Explore Our Dishes</h2>
+        <p>Select your favorite meal and add it to your order.</p>
+      </div>
+
+      <!-- Categories Filter -->
+      <div class="category-filters">
+        <button class="filter-btn active" data-category="all">All Items</button>
+        <button class="filter-btn" data-category="burgers">Burgers</button>
+        <button class="filter-btn" data-category="pizzas">Pizzas</button>
+        <button class="filter-btn" data-category="drinks">Drinks</button>
+      </div>
+
+      <!-- Food Menu Grid -->
+      <div class="food-grid" id="food-grid">
+        <!-- Items generated dynamically via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Shopping Cart Slide Drawer -->
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Order</h3>
+      <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-body" id="cart-body">
+      <!-- Cart items injected dynamically -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="total-row">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="btn btn-primary full-width" id="checkout-btn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Cart Overlay Backdrop -->
+   <div class="cart-overlay" (keep every category 3 producd) id="cart-overlay"></div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="modal" id="order-modal">
+    <div class="modal-content text-center">
+      <i class="fa-solid fa-circle-check success-icon"></i>
+      <h2>Order Confirmed!</h2>
+      <p>Your delicious food is being prepared and will be delivered shortly.</p>
+      <button class="btn btn-primary" id="close-modal">Back to Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
